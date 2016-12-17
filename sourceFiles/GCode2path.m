@@ -9,6 +9,7 @@ function [path,theta] = GCode2path(input,ds,startPos)
 fileID = fopen(input);
 gcode = textscan(fileID,'%s','Delimiter','\n');
 gcode = gcode{1};
+fclose(fileID);
 
 path = [];
 numCommands = numel(gcode);
